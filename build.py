@@ -6,6 +6,7 @@ SITE_PREFIX = ''
 
 # list posts
 post_filenames = sorted(os.listdir('posts'))
+post_filenames.reverse()
 
 post_listing_contexts = []
 
