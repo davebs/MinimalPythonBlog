@@ -12,7 +12,7 @@ But since I'm kind of a hipster software developer, a "blogging platform" simply
 
 I've heard good things about Jekyll. But why use something that's perfectly good and widely supported when **I can make my own**!
 
-So I did. I used it to publish this site. I put the code on github.
+So I did. I used it to publish this site. I put the code on github <a href="https://github.com/davebs/MinimalPythonBlog">here</a>
 
 It's pretty much the most minimal static site generator for blogging I can conceive of. It's all in python. It uses jinja2 to render templates. It scans a directory for text files written in markdown, then converts that markdown into HTML (w/ python markdown), adds syntax coloring for code (with pygments), and updates the index page listing posts.
 

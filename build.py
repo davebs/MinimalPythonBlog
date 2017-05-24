@@ -23,7 +23,7 @@ for post_filename in post_filenames:
     # we'll use these to render the index page after writing out each post
     post_listing_context = {
                 'title': lines[0][1:],
-                'url': SITE_PREFIX+post_filename[:-2]+'.html'
+                'url': SITE_PREFIX+post_filename[:-3]+'.html'
             }
     post_listing_contexts.append(post_listing_context)
 
@@ -31,7 +31,7 @@ for post_filename in post_filenames:
                 'content': content_html
             }
     rendered_post = template.render(post_content_context)
-    with open("build/"+post_filename[:-2]+'.html', "wb") as fh:
+    with open("build/"+post_filename[:-3]+'.html', "wb") as fh:
             fh.write(rendered_post)
 
 # render index

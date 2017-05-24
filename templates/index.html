@@ -3,6 +3,7 @@
 
 <head>
 <title>Dave Sullivan's Personal Blog</title>
+<meta name=viewport content="width=device-width, initial-scale=1">
 </head>
 
 <style>
@@ -56,6 +57,16 @@ a.namebox {
     text-decoration: none;
 }
 
+.topbar {
+    background-color: #4b9bff;
+    border-bottom: 10px solid #9ac7ff;
+    margin: 0px;
+    padding: 20px 0px 10px 40px;
+    color: #fefefe;
+    display:none;
+    width: 100%;
+}
+
 .sidebar {
     background-color: #4b9bff;
     border-right: 10px solid #9ac7ff;
@@ -64,16 +75,15 @@ a.namebox {
     height: 100%;
     width: 190px; 
     position: fixed; 
+    min-width: 0px;
     color: #fefefe;
-    z-order: 10;
 }
 
 .main_content {
     padding-top: 40px;
     margin-left: 240px;
-    width: 760px;
-    float:left;
-    z-order: 100;
+    padding-right: 15px;
+    margin-right: 10px;
 }
 
 a.post {
@@ -105,6 +115,22 @@ a.twitter {
 a.twitter:hover{
     background-color: #ce0b91;;
 }
+
+@media only screen and (max-width: 1000px) {
+  .sidebar {
+    display: none;
+    width: 0px;
+  }
+  .main_content {
+    padding-left: 30px;
+    margin-left: 0px;
+    margin-right: 60px;
+  }
+  .topbar {
+    display: block;
+  }
+}
+
 
 .codehilite .hll { background-color: #ffffcc }
 .codehilite  { background: #f8f8f8; }
@@ -179,6 +205,32 @@ a.twitter:hover{
 </style>
 
 <body>
+    <div class="topbar">
+
+        <div id="inner_topbar_container">
+            <div style="margin-left: 25px;width: 110px; float:left; margin-bottom: 15px; margin-right: 25px;">
+                <a class="namebox" href="index.html">DS</a>
+            </div>
+
+            <div style="font-size: 12px; float:left; width: 280px; margin-right: 20px; padding-bottom:20px;">
+                <span style="font-size: 16px; color: #fffb00;"><b>I'm a web developer and data scientist living in San Francisco.</b><br/><br/></span>
+                I specialize in python, deep learning, business process automation, and a lot of other things.
+            </div>
+
+            <div style="float:left; margin-right: 40px; padding-top: 0px;">
+                <center><span style="font-size: 18px; color: #fffb00"><b>Hire me:</b></span></center>
+                <center>
+                <span style="font-size: 12px;">dave.brian.sullivan@gmail.com</span>
+                </center>
+            </div>
+
+            <div style="width: 160px; float:left; padding-top: 15px;">
+                <a class="twitter" href="https://www.twitter.com/@_davesullivan/">twitter: @_davesullivan</a>
+        </div>
+    </div>
+
+    <div style="clear:both;"></div>
+    </div>
     <div class="sidebar">
 
         <div style="width: 110px; margin: 0 auto;">
@@ -190,11 +242,7 @@ a.twitter:hover{
             I specialize in python, deep learning, business process automation, and a lot of other things.
         </div>
 
-        <div style="width: 130px; margin: 0 auto; margin-bottom: 10px; padding-right: 10px;">
-            <img src="https://daveblogimages.s3.amazonaws.com/sidebar_profile_pic.png" />
-        </div>
-
-        <div style="margin-bottom: 20px;">
+        <div style="margin-bottom: 20px; margin-right: 20px;">
             <center><span style="font-size: 18px; color: #fffb00"><b>Hire me:</b></span></center>
             <center>
             <span style="font-size: 12px;">dave.brian.sullivan@gmail.com</span>
@@ -211,11 +259,12 @@ a.twitter:hover{
         {% for post in posts %}
             <a class="post" href="{{ post.url }}">{{ post.title }}</a>
         {% endfor %}
-        <div style="margin-top:40px;">
+        <div style="margin-top:40px; margin-bottom: 40px;">
         <em>This is the end of all that there is...</em>
         </div>
         {% endblock %}
     </div>
+    <div style="clear:both;"></div>
 </body>
 
 </html>
