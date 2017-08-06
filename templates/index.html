@@ -2,35 +2,68 @@
 <html>
 
 <head>
+
 <title>Dave Sullivan's Personal Blog</title>
-<meta name=viewport content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Brilliant thoughts and opinions about data science, programming, and digital society.">
+
+<script src="https://use.typekit.net/kxu4rqi.js"></script>
+<script>try{Typekit.load({async:true});}catch(e){}</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-103566391-1', 'auto');
+ga('send', 'pageview');
+</script>
+
 </head>
 
 <style>
 
 body {
-    font-family: Sans-Serif;
+    font-family: "source-serif-pro", Sans-Serif;
     margin: 0px;
-    background-color: #fefefe;
-    color: #010101;
+    padding: 0px;
+    background-color: #fbfbfb;
+    color: #2b2b2b;
+}
+
+p {
+    line-height: 158%;
+    font-size: 20px;
 }
 
 h1 {
+    font-family: "source-sans-pro";
+    font-weight: 700;
+    font-style: normal;
     padding: 20px;
-    background-color: #353a46;
+    background-color: #b5385b;
     color: #fefefe;
-    text-shadow: 0px 1px 2px rgba(0,0,0,.9);
+    font-size: 48px;
 }
 
 h2 {
+    font-family: "source-sans-pro";
+    font-weight: 900;
+    font-style: normal;
+    font-size: 32px;
+    color: #1752bf;
 }
 
 h3 {
+    font-family: "source-sans-pro";
+    font-weight: 700;
+    font-style: normal;
     background-color: #d6e8ff;
-    padding: 10px;
+    padding: 20px;
     width: 300px;
     float:left;
     margin-right: 30px;
+    line-height: 125%;
 }
 
 pre {
@@ -42,41 +75,40 @@ pre {
 }
 
 a.namebox:hover {
-    background-color: #b9b734;
+    background-color: #000000;
 }
 
 a.namebox {
     margin-bottom: 30px;
-    background-color: #065186;
+    background-color: #96183b;
     color: #fefefe;
-    padding: 5px 5px;
+    padding: 5px 15px;
     font-size: 72px;
     font-weight: bold;
     width: 105px;
-    text-shadow: 0px 2px 2px rgba(0,0,0,.8);
     text-decoration: none;
+    font-family: "source-serif-pro";
+}
+
+.topbar, .sidebar {
+    background-color: #274680;
+    margin: 0px;
+    color: #fefefe;
+    box-sizing: border-box;
 }
 
 .topbar {
-    background-color: #4b9bff;
-    border-bottom: 10px solid #9ac7ff;
-    margin: 0px;
     padding: 20px 0px 10px 40px;
-    color: #fefefe;
     display:none;
     width: 100%;
 }
 
 .sidebar {
-    background-color: #4b9bff;
-    border-right: 10px solid #9ac7ff;
-    margin: 0px;
     padding: 50px 10px 0 10px;
     height: 100%;
     width: 190px; 
     position: fixed; 
     min-width: 0px;
-    color: #fefefe;
 }
 
 .main_content {
@@ -87,23 +119,29 @@ a.namebox {
 }
 
 a.post {
+    font-family: source-sans-pro;
+    font-weight: 500;
+    font-style: normal;
     display: block;
+    /*
     background-color: #72a1dc;
+    color: #fefefe;*/
+    color: #000000;
     font-size: 24px;
     padding: 5px;
     text-decoration: none;
-    color: #fefefe;
-    text-shadow: 0px 1px 1px rgba(0,0,0,.8);
+    /*text-shadow: 0px 1px 1px rgba(0,0,0,.8);*/
     margin-bottom: 10px;
 }
 
 a.post:hover {
     background-color: #1677f1;
+    color: #fefefe;
 }
 
 a.twitter {
     display: block;
-    background-color: #dc72bb;
+    background-color: #b5385b;
     text-align: center;
     font-size: 12px;
     padding: 5px;
@@ -113,10 +151,10 @@ a.twitter {
 }
 
 a.twitter:hover{
-    background-color: #ce0b91;;
+    background-color: #da6384;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 960px) {
   .sidebar {
     display: none;
     width: 0px;
@@ -124,7 +162,7 @@ a.twitter:hover{
   .main_content {
     padding-left: 30px;
     margin-left: 0px;
-    margin-right: 60px;
+    #margin-right: 60px;
   }
   .topbar {
     display: block;
@@ -208,59 +246,81 @@ a.twitter:hover{
     <div class="topbar">
 
         <div id="inner_topbar_container">
-            <div style="margin-left: 25px;width: 110px; float:left; margin-bottom: 15px; margin-right: 25px;">
+            <div style="margin-left: 25px;width: 110px; float:left; margin-bottom: 15px; 
+                margin-right: 25px;">
                 <a class="namebox" href="index.html">DS</a>
             </div>
 
-            <div style="font-size: 12px; float:left; width: 280px; margin-right: 20px; padding-bottom:20px;">
-                <span style="font-size: 16px; color: #fffb00;"><b>I'm a web developer and data scientist living in San Francisco.</b><br/><br/></span>
-                I specialize in python, deep learning, business process automation, and a lot of other things.
+            <div style="font-size: 12px; float:left; width: 280px; margin-right: 20px; padding-bottom:15px; font-family: source-sans-pro;">
+                <div style="font-size: 16px; color: #fffb00; margin-bottom:0px;"><b>I'm a web developer and data scientist living in San Francisco.</b></div>
+                <div style=""> I specialize in python, deep learning, business process automation, and some other things.
+                </div>
             </div>
 
-            <div style="float:left; margin-right: 40px; padding-top: 0px;">
-                <center><span style="font-size: 18px; color: #fffb00"><b>Hire me:</b></span></center>
-                <center>
-                <span style="font-size: 12px;">dave.brian.sullivan@gmail.com</span>
-                </center>
+            <div style="float:left; margin-right: 0px; padding-top: 0px; 
+                    font-family: source-sans-pro">
+                <div style="font-size: 18px; color: #fffb00; margin: 0px; 
+                        text-align: center;">
+                    <b>Get In Touch</b></div>
+                <div style="font-size: 12px; text-align: center;">
+                    dave.brian.sullivan@gmail.com</div>
+                <div style="margin-top: 10px;">
+                    <a class="twitter" href="https://www.twitter.com/@_davesullivan/">
+                        twitter: @_davesullivan</a>
+                </div>
             </div>
 
-            <div style="width: 160px; float:left; padding-top: 15px;">
-                <a class="twitter" href="https://www.twitter.com/@_davesullivan/">twitter: @_davesullivan</a>
         </div>
-    </div>
 
-    <div style="clear:both;"></div>
+        <div style="clear:both;"></div>
     </div>
-    <div class="sidebar">
+    <div class="sidebar" style="font-family: source-sans-pro">
 
         <div style="width: 110px; margin: 0 auto;">
             <a class="namebox" href="index.html">DS</a>
         </div>
 
         <div style="margin-bottom: 20px; margin-top: 40px; font-size: 12px;">
-            <span style="font-size: 16px; color: #fffb00;"><b>I'm a web developer and data scientist living in San Francisco.</b><br/><br/></span>
-            I specialize in python, deep learning, business process automation, and a lot of other things.
+            <div style="font-size: 16px; color: #fffb00; margin-bottom: 8px;">
+                <b>I'm a web developer and data scientist living in San Francisco.</b></div>
+            <div>
+            I specialize in python, deep learning, business process automation, and some other things.
+            </div>
         </div>
 
-        <div style="margin-bottom: 20px; margin-right: 20px;">
-            <center><span style="font-size: 18px; color: #fffb00"><b>Hire me:</b></span></center>
-            <center>
-            <span style="font-size: 12px;">dave.brian.sullivan@gmail.com</span>
-            </center>
+        <div style="margin-bottom: 20px; margin-right: 0px;">
+            <div style="font-size: 18px; color: #fffb00; padding: 0px; margin: 0px; 
+                    text-align: center;">
+                <b>Get In Touch</b>
+            </div>
+            <div style="font-size: 12px; text-align: center;">
+                dave.brian.sullivan@gmail.com
+            </div>
         </div>
-
         <a class="twitter" href="https://www.twitter.com/@_davesullivan/">twitter: @_davesullivan</a>
+        <div style="margin-top: 10px;">
+            <a class="twitter" href="http://www.starshipassassin.com/">
+                Starship Assassin</a>
+        </div>
+        <div style="margin-top: 10px;">
+            <a class="twitter" href="http://www.blackcloudbsg.com/">
+                Blackcloud BSG</a>
+        </div>
+        <div style="width:94px; margin: 0 auto; margin-top: 20px;">
+            <div class="createsend-button" style="height:22px;display:inline-block;" data-listid="j/7B/F75/B44/DD6E2E5EB9DA280B">
+            </div>
+            
+            <script type="text/javascript">(function () { var e = document.createElement('script'); e.type = 'text/javascript'; e.async = true; e.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://btn.createsend1.com/js/sb.min.js?v=3'; e.className = 'createsend-script'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s); })();</script>
+        </div>
 
     </div>
     <div class="main_content">
         {% block content %}
         <h1>Personal Blog of Dave Sullivan</h1>
-        <h2>List of posts</h2>
         {% for post in posts %}
             <a class="post" href="{{ post.url }}">{{ post.title }}</a>
         {% endfor %}
         <div style="margin-top:40px; margin-bottom: 40px;">
-        <em>This is the end of all that there is...</em>
         </div>
         {% endblock %}
     </div>
